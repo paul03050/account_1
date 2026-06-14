@@ -21,7 +21,7 @@ export const pbcItems: PbcItem[] = [
       '調整分錄缺乏佐證文件 → 損益表費用歸屬期間不正確',
     ],
     relatedLaws: [
-      { name: '商業會計法第 33 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080001' },
+      { name: '商業會計法第 33 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080009' },
       { name: '所得稅法第 24 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0340001' },
     ],
     relatedReports: ['資產負債表-全部科目', '損益表-全部科目'],
@@ -43,7 +43,7 @@ export const pbcItems: PbcItem[] = [
       '缺乏異常分錄審核紀錄 → 舞弊風險提高',
     ],
     relatedLaws: [
-      { name: '商業會計法第 21 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080001' },
+      { name: '商業會計法第 21 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080009' },
     ],
     relatedReports: ['資產負債表-全部科目', '損益表-全部科目'],
   },
@@ -64,7 +64,7 @@ export const pbcItems: PbcItem[] = [
       '科目餘額年度間劇烈變動未說明 → 損益表收入/成本可能有誤',
     ],
     relatedLaws: [
-      { name: '商業會計法第 22 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080001' },
+      { name: '商業會計法第 22 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080009' },
     ],
     relatedReports: ['資產負債表-全部科目'],
   },
@@ -85,7 +85,7 @@ export const pbcItems: PbcItem[] = [
       '附註數字與報表主表不一致 → 財務報表可信度受影響',
     ],
     relatedLaws: [
-      { name: '商業會計法第 28 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080001' },
+      { name: '商業會計法第 28 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080009' },
       { name: '證券交易法第 36 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0340006' },
     ],
     relatedReports: ['資產負債表', '綜合損益表', '現金流量表', '權益變動表'],
@@ -177,7 +177,7 @@ export const pbcItems: PbcItem[] = [
     ],
     relatedLaws: [
       { name: '所得稅法第 24 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0340001' },
-      { name: '商業會計法第 38 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080001' },
+      { name: '商業會計法第 38 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080009' },
     ],
     relatedReports: ['資產負債表-貨幣資金', '現金流量表'],
   },
@@ -242,7 +242,7 @@ export const pbcItems: PbcItem[] = [
       '外幣評價未依匯率調整 → 損益表匯兌損益可能錯誤',
     ],
     relatedLaws: [
-      { name: '商業會計法第 41 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080001' },
+      { name: '商業會計法第 41 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080009' },
     ],
     relatedReports: ['資產負債表-貨幣資金', '損益表-匯兌損益'],
   },
@@ -263,7 +263,7 @@ export const pbcItems: PbcItem[] = [
       '報銷憑證不足 → 可能有費用浮報情形',
     ],
     relatedLaws: [
-      { name: '商業會計法第 38 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080001' },
+      { name: '商業會計法第 38 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080009' },
     ],
     relatedReports: ['資產負債表-貨幣資金', '損益表-其他費用'],
   },
@@ -427,7 +427,7 @@ export const pbcItems: PbcItem[] = [
       '存貨計價方法未一貫採用 → 損益表銷貨成本比較性受影響',
     ],
     relatedLaws: [
-      { name: '商業會計法第 43 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080001' },
+      { name: '商業會計法第 43 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080009' },
     ],
     relatedReports: ['資產負債表-存貨', '損益表-銷貨成本'],
   },
@@ -449,7 +449,7 @@ export const pbcItems: PbcItem[] = [
       '第三方倉庫未函證 → 存貨權利歸屬不明',
     ],
     relatedLaws: [
-      { name: '商業會計法第 44 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080001' },
+      { name: '商業會計法第 44 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080009' },
     ],
     relatedReports: ['資產負債表-存貨', '損益表-存貨盤盈虧'],
   },
@@ -492,7 +492,7 @@ export const pbcItems: PbcItem[] = [
       '在製品計算錯誤 → 期末存貨金額不實',
     ],
     relatedLaws: [
-      { name: '商業會計法第 43 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080001' },
+      { name: '商業會計法第 43 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080009' },
     ],
     relatedReports: ['資產負債表-存貨', '損益表-銷貨成本'],
   },
@@ -514,7 +514,7 @@ export const pbcItems: PbcItem[] = [
       '跌價準備迴轉處理不當 → 損益波動異常',
     ],
     relatedLaws: [
-      { name: '商業會計法第 43 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080001' },
+      { name: '商業會計法第 43 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080009' },
     ],
     relatedReports: ['資產負債表-存貨', '損益表-存貨跌價損失'],
   },
@@ -653,7 +653,7 @@ export const pbcItems: PbcItem[] = [
       '借方餘額未重分類 → 資產負債表表達錯誤',
     ],
     relatedLaws: [
-      { name: '商業會計法第 38 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080001' },
+      { name: '商業會計法第 38 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080009' },
     ],
     relatedReports: ['資產負債表-應付帳款'],
   },
@@ -829,7 +829,7 @@ export const pbcItems: PbcItem[] = [
       '預付款項已無效益未轉列損失 → 資產不實',
     ],
     relatedLaws: [
-      { name: '商業會計法第 42 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080001' },
+      { name: '商業會計法第 42 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080009' },
     ],
     relatedReports: ['資產負債表-預付費用', '損益表-各項費用'],
   },
@@ -946,7 +946,7 @@ export const pbcItems: PbcItem[] = [
     ],
     relatedLaws: [
       { name: '證券交易法第 36-1 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0340006' },
-      { name: '公開發行公司資金貸與及背書保證處理準則', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0340003' },
+      { name: '公開發行公司資金貸與及背書保證處理準則', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0400058' },
     ],
     relatedReports: ['資產負債表-或有負債揭露'],
   },
@@ -1016,7 +1016,7 @@ export const pbcItems: PbcItem[] = [
       '證明文件未妥善保存 → 國稅局查核時無法證明',
     ],
     relatedLaws: [
-      { name: '產業創新條例第 10 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0340001' },
+      { name: '產業創新條例第 10 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0040051' },
     ],
     relatedReports: ['損益表-所得稅費用'],
   },
@@ -1038,7 +1038,7 @@ export const pbcItems: PbcItem[] = [
       '合約不利條款未評估 → 可能產生重大損失',
     ],
     relatedLaws: [
-      { name: '商業會計法第 26 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080001' },
+      { name: '商業會計法第 26 條', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080009' },
     ],
     relatedReports: ['財務報表附註-或有事項'],
   },
