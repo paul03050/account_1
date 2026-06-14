@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo, useCallback } from 'react'
 import { pbcItems } from '../data/pbc'
 import type { PbcCategory } from '../types'
+import PbcExportModal from '../components/PbcExportModal'
 
 const categoryTabs: { key: PbcCategory | 'all'; label: string }[] = [
   { key: 'all', label: '全部' },
@@ -34,95 +35,6 @@ function getRiskBadge(level: string) {
 function getCategoryName(cat: PbcCategory) {
   const tab = categoryTabs.find((t) => t.key === cat)
   return tab?.label ?? cat
-}
-
-function ExportModal({
-  open,
-  onClose,
-  completed,
-  activeTab,
-}: {
-  open: boolean
-  onClose: () => void
-  completed: Set<string>
-  activeTab: PbcCategory | 'all'
-}) {
-  const report = useMemo(() => {
-    const filtered = activeTab === 'all'
-      ? pbcItems
-      : pbcItems.filter((i) => i.category === activeTab)
-
-    const done = filtered.filter((i) => completed.has(i.id))
-    const pending = filtered.filter((i) => !completed.has(i.id))
-    const now = new Date().toISOString().slice(0, 10)
-
-    let md = `# PBC 檢查報告\n`
-    md += `日期：${now}\n\n`
-    md += `## 摘要\n\n`
-    md += `- 全部項目：${filtered.length}\n`
-    md += `- 已完成：${done.length}\n`
-    md += `- 未完成：${pending.length}\n`
-    md += `- 完成率：${filtered.length ? Math.round((done.length / filtered.length) * 100) : 0}%\n\n`
-
-    const byCategory = new Map<PbcCategory, typeof filtered>()
-    filtered.forEach((item) => {
-      const list = byCategory.get(item.category) ?? []
-      list.push(item)
-      byCategory.set(item.category, list)
-    })
-
-    for (const [cat, items] of byCategory) {
-      const catName = getCategoryName(cat)
-      const catDone = items.filter((i) => completed.has(i.id)).length
-      md += `## ${catName}（${catDone}/${items.length} 完成）\n\n`
-      for (const item of items) {
-        const status = completed.has(item.id) ? 'x' : ' '
-        md += `- [${status}] **${item.name}** (${item.riskLevel}風險)\n`
-        if (!completed.has(item.id)) {
-          md += `  - 稽核重點：${item.auditFocus.slice(0, 2).join('；')}\n`
-          md += `  - 常見問題：${item.commonIssues.slice(0, 2).join('；')}\n`
-        }
-      }
-      md += '\n'
-    }
-
-    md += `---\n自動產生於 ${now}\n`
-    return md
-  }, [completed, activeTab])
-
-  const [copied, setCopied] = useState(false)
-
-  const handleCopy = useCallback(async () => {
-    try {
-      await navigator.clipboard.writeText(report)
-    } catch {
-      const textarea = document.createElement('textarea')
-      textarea.value = report
-      document.body.appendChild(textarea)
-      textarea.select()
-      document.execCommand('copy')
-      document.body.removeChild(textarea)
-    }
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
-  }, [report])
-
-  if (!open) return null
-
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-      <div className="modal-box max-w-3xl max-h-[80vh] overflow-y-auto">
-        <h3 className="font-bold text-lg mb-2">📋 PBC 檢查報告</h3>
-        <pre className="text-xs bg-base-200 p-4 rounded-box overflow-x-auto whitespace-pre-wrap">{report}</pre>
-        <div className="modal-action">
-          <button className="btn btn-sm" onClick={onClose}>關閉</button>
-          <button className="btn btn-sm btn-primary" onClick={handleCopy}>
-            {copied ? '✅ 已複製' : '📋 複製報告'}
-          </button>
-        </div>
-      </div>
-    </div>
-  )
 }
 
 export default function PbcAnalysis() {
@@ -374,7 +286,7 @@ export default function PbcAnalysis() {
         </div>
       )}
 
-      <ExportModal
+      <PbcExportModal
         open={showExport}
         onClose={() => setShowExport(false)}
         completed={completed}
