@@ -130,6 +130,22 @@ export const summaries: RegulationSummary[] = [
     relatedStandards: ['所得稅法', '營利事業所得稅查核準則'],
   },
   {
+    regulationId: 'pbc-full-checklist',
+    keyPoints: [
+      'PBC 清單涵蓋九大審計科目，從基本資料到稅務申報',
+      '應收帳款/收入循環為最常補件項目',
+      '存貨類為製造/貿易業查核重點',
+      '貨幣資金屬高風險科目，需全年度對帳單',
+    ],
+    auditFocus: [
+      '各科目 PBC 是否齊全且具時效性',
+      '銀行函證、應收帳款函證是否已發出',
+      '存貨盤點計畫是否已安排',
+      '關係人交易及背書保證是否完整揭露',
+    ],
+    relatedStandards: ['審計準則公報第 36 號', 'ISA 210', 'ISA 500'],
+  },
+  {
     regulationId: 'pbc-checklist',
     keyPoints: [
       'PBC 清單分為公司資料、財務資料、內控資料三大類',
