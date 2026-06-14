@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react'
+import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import Laws from './pages/Laws'
@@ -7,9 +8,24 @@ import Notes from './pages/Notes'
 import Comparison from './pages/Comparison'
 import ExportPage from './pages/Export'
 
+function NavigateBack() {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const redirect = sessionStorage.getItem('redirect')
+    if (redirect) {
+      sessionStorage.removeItem('redirect')
+      navigate(redirect, { replace: true })
+    }
+  }, [navigate])
+
+  return null
+}
+
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <NavigateBack />
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />

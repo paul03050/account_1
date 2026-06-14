@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>重新導向中…</title>
+  <script>
+    ;(function () {
+      var base = '/account_1'
+      var path = location.pathname.replace(base, '') || '/'
+      sessionStorage.redirect = path + location.search + location.hash
+      location.replace(base + '/')
+    })()
+  </script>
+</head>
+<body></body>
+</html>
