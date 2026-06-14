@@ -93,7 +93,16 @@ function ExportModal({
   const [copied, setCopied] = useState(false)
 
   const handleCopy = useCallback(async () => {
-    await navigator.clipboard.writeText(report)
+    try {
+      await navigator.clipboard.writeText(report)
+    } catch {
+      const textarea = document.createElement('textarea')
+      textarea.value = report
+      document.body.appendChild(textarea)
+      textarea.select()
+      document.execCommand('copy')
+      document.body.removeChild(textarea)
+    }
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }, [report])
