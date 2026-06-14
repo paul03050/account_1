@@ -7,6 +7,7 @@ import LawDetail from './pages/LawDetail'
 import Notes from './pages/Notes'
 import Comparison from './pages/Comparison'
 import ExportPage from './pages/Export'
+import PbcAnalysis from './pages/PbcAnalysis'
 
 function NavigateBack() {
   const navigate = useNavigate()
@@ -31,6 +32,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/laws" element={<Laws />} />
           <Route path="/laws/:id" element={<LawDetail />} />
+          <Route path="/pbc-analysis" element={<PbcAnalysis />} />
           <Route path="/notes" element={<Notes />} />
           <Route path="/comparison" element={<Comparison />} />
           <Route path="/export" element={<ExportPage />} />

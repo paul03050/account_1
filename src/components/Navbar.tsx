@@ -4,6 +4,7 @@ import { useState } from 'react'
 const navItems = [
   { path: '/', label: '首頁', icon: '🏠' },
   { path: '/laws', label: '法規瀏覽', icon: '📖' },
+  { path: '/pbc-analysis', label: 'PBC 分析', icon: '📂' },
   { path: '/notes', label: '重點整理', icon: '📝' },
   { path: '/comparison', label: '版本比對', icon: '🔍' },
   { path: '/export', label: '報表匯出', icon: '📥' },

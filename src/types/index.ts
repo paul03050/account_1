@@ -34,3 +34,32 @@ export interface RegulationVersion {
   changeLog: string
   date: string
 }
+
+export interface PbcRelatedLaw {
+  name: string
+  url: string
+}
+
+export type PbcCategory =
+  | 'basic-info'
+  | 'cash-bank'
+  | 'ar-revenue'
+  | 'inventory'
+  | 'fixed-assets'
+  | 'ap-procurement'
+  | 'expense-payroll'
+  | 'equity-related-party'
+  | 'tax-other'
+
+export interface PbcItem {
+  id: string
+  name: string
+  category: PbcCategory
+  riskLevel: '高' | '中' | '低'
+  erpModule: string
+  relatedDepartments: string[]
+  auditFocus: string[]
+  commonIssues: string[]
+  relatedLaws: PbcRelatedLaw[]
+  relatedReports: string[]
+}
