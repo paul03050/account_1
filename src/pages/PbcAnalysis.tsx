@@ -178,21 +178,21 @@ export default function PbcAnalysis() {
             return (
               <div
                 key={item.id}
-                className={`card bg-base-100 border transition-colors ${
-                  isDone ? 'border-success/30 opacity-70' : 'border-base-300'
+                onClick={() => {
+                  setExpandedCard(isExpanded ? null : item.id)
+                  toggleItem(item.id)
+                }}
+                className={`card bg-base-100 border transition-all duration-300 cursor-pointer ${
+                  isDone
+                    ? 'border-success border-2 bg-success/5 shadow-md'
+                    : 'border-base-300 shadow-sm'
                 }`}
               >
                 <div className="card-body py-3 px-4">
-                  {/* Card header */}
                   <div className="flex items-start gap-3">
-                    <label className="flex items-center cursor-pointer mt-1">
-                      <input
-                        type="checkbox"
-                        className="checkbox checkbox-sm checkbox-primary"
-                        checked={isDone}
-                        onChange={() => toggleItem(item.id)}
-                      />
-                    </label>
+                    {isDone && (
+                      <span className="mt-0.5 text-lg flex-shrink-0">✅</span>
+                    )}
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center flex-wrap gap-2">
                         <h3 className={`font-medium ${isDone ? 'line-through' : ''}`}>
@@ -246,6 +246,7 @@ export default function PbcAnalysis() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="badge badge-ghost badge-sm hover:badge-primary gap-1"
+                                    onClick={(e) => e.stopPropagation()}
                                   >
                                     {law.name}
                                     <span className="text-xs">↗</span>
@@ -269,15 +270,6 @@ export default function PbcAnalysis() {
                         </div>
                       )}
                     </div>
-
-                    {/* Expand button */}
-                    <button
-                      className="btn btn-ghost btn-xs btn-square"
-                      onClick={() => setExpandedCard(isExpanded ? null : item.id)}
-                      title={isExpanded ? '收合' : '展開'}
-                    >
-                      {isExpanded ? '▲' : '▼'}
-                    </button>
                   </div>
                 </div>
               </div>
