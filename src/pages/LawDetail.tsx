@@ -52,7 +52,7 @@ export default function LawDetail() {
               </span>
             ))}
           </div>
-          <div className="mt-4 grid grid-cols-2 gap-4 text-sm">
+          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
             <div>
               <span className="text-base-content/50">發布日期：</span>
               {regulation.publishDate}

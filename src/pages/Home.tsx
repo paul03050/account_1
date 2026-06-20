@@ -7,10 +7,10 @@ export default function Home() {
 
   return (
     <div>
-      <div className="hero bg-base-200 rounded-box p-8 mb-8">
+      <div className="hero bg-base-200 rounded-box p-6 sm:p-8 mb-8">
         <div className="hero-content text-center">
           <div>
-            <h1 className="text-4xl font-bold">會計稅務法規查詢系統</h1>
+            <h1 className="text-2xl sm:text-4xl font-bold">會計稅務法規查詢系統</h1>
             <p className="py-4 text-base-content/70 max-w-xl">
               整合稅務法規、會計內控機制、IFRS 準則、查核準則、審計 PBC
               及所得稅申報，提供一站式法規查詢與重點整理服務。

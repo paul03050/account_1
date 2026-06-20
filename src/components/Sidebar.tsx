@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { categories } from '../data/categories'
 
@@ -13,6 +14,11 @@ export default function Sidebar() {
   const handleCategoryClick = (catId: string) => {
     navigate(`/laws?category=${catId}`)
   }
+
+  useEffect(() => {
+    const drawer = document.getElementById('sidebar-drawer') as HTMLInputElement | null
+    if (drawer?.checked) drawer.checked = false
+  }, [location])
 
   return (
     <aside className="w-64 min-h-[calc(100vh-64px)] bg-base-200 p-4 overflow-y-auto">

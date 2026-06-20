@@ -166,7 +166,7 @@ export default function Laws() {
 
       <div className="flex items-center justify-end mb-4">
         <select
-          className="select select-bordered select-sm"
+          className="select select-bordered select-sm w-full sm:w-auto"
           value={sort}
           onChange={(e) => setSort(e.target.value as SortKey)}
         >
